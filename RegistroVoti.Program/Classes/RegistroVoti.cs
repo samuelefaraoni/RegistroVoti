@@ -72,5 +72,25 @@ namespace RegistroVoti.Program.Classes
 
             return sommaVoti / Voti.Count();
         }
+
+        public Voto OttieniVotoPiuAlto()
+        {
+            Voto max = Voti[0];
+            foreach (var voto in Voti)
+                if (voto.Valore > max.Valore)
+                    max = voto;
+
+            return max;
+        }
+
+        public Voto OttieniVotoPiuBasso()
+        {
+            Voto max = Voti[0];
+            foreach (var voto in Voti)
+                if (voto.Valore < max.Valore)
+                    max = voto;
+
+            return max;
+        }
     }
 }
